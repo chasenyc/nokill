@@ -4,6 +4,8 @@ class Owner < ActiveRecord::Base
   validates :email, :password_digest, :session_token,
             :birthdate, presence: true
 
+  after_initialize :ensure_session_token, :generate_pin
+
   def self.find_by_credentials(email, password)
     user = User.find_by_email(email)
     return nil if user.nil?
@@ -32,4 +34,10 @@ class Owner < ActiveRecord::Base
   def ensure_session_token
     self.session_token ||= SecureRandom::urlsafe_base64
   end
+
+  def generate_pin
+    self.pin ||= rand(0000..9999).to_s.rjust(4, "0")
+  end
+
+
 end
