@@ -20,5 +20,23 @@ column name     |  data type     |  details
 id              | integer        | not null, primary key
 email           | string         | not null, indexed, unique
 email_verified  | boolean        | not null, default false
+admin_verified  | boolean        | not null, default false
 password_digest | string         | not null
 session_token   | string         | not null, indexed, unique
+
+## Animals
+column name     |  data type     |  details
+----------------|----------------|-----------------------
+id              | integer        | not null, primary key
+owner_id        | integer        | foreign key (references owners)
+name            | string         | not null
+gender          | string         | not null, limit 1
+birthday        | date           | not null
+species         | string         | not null
+image           | attachment     |
+reason          | string         |
+origin          | string         |
+ownership_length| string         |
+bitten          | boolean        | not null, default false
+bite_details    | string         |
+summary         | string         |
