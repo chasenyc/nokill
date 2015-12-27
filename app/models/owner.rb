@@ -2,14 +2,15 @@ class Owner < ActiveRecord::Base
   attr_reader :password
 
   validates :email, :password_digest, :session_token,
-            :birthdate, presence: true
+            :birthdate, :fname, :lname, :pin, :email_verified,
+            :phone_verified, presence: true
 
   after_initialize :ensure_session_token, :generate_pin
 
   def self.find_by_credentials(email, password)
-    user = User.find_by_email(email)
-    return nil if user.nil?
-    user.is_password?(password) ? user : nil
+    owner = Owner.find_by_email(email)
+    return nil if owner.nil?
+    owner.is_password?(password) ? owner : nil
   end
 
   def is_password?(password)
