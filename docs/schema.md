@@ -33,6 +33,7 @@ name            | string         | not null
 gender          | string         | not null, limit 1
 birthday        | date           | not null
 species         | string         | not null
+breed_id        | integer        | foreign key (references breeds)
 image           | attachment     |
 reason          | string         |
 origin          | string         |
@@ -40,3 +41,9 @@ ownership_length| string         |
 bitten          | boolean        | not null, default false
 bite_details    | string         |
 summary         | string         |
+
+## Breeds
+column name     |  data type     |  details
+----------------|----------------|-----------------------
+id              | integer        | not null, primary key
+breed           | string         | not null, unique
