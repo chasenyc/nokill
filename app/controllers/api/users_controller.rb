@@ -3,7 +3,6 @@ class Api::UsersController < ApplicationController
 
     def create
       @user = User.new(user_params)
-      @user.admin = false
       if @user.save
         session[:session_token] = @user.session_token
         render "show"
