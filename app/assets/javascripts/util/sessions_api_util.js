@@ -10,7 +10,6 @@ var SessionsApiUtil = {
         success && success();
       },
       error: function (error) {
-        ApiActions.receiveError(error);
       }
     });
   },
@@ -24,7 +23,7 @@ var SessionsApiUtil = {
         CurrentUserActions.receiveCurrentUser({});
       },
       error: function (error) {
-        ApiActions.receiveError(error);
+
       }
     });
   },
@@ -38,7 +37,7 @@ var SessionsApiUtil = {
         CurrentUserActions.receiveCurrentUser(currentUser);
       },
       error: function (error) {
-        ApiActions.receiveError(error);
+
       }
     });
   }

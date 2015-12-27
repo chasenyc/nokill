@@ -11,7 +11,7 @@ var UsersApiUtil = {
         success && success();
       },
       error: function (error) {
-        ApiActions.receiveError(error);
+
       }
     });
   },
@@ -30,7 +30,6 @@ var UsersApiUtil = {
       },
       error: function (error) {
 
-        ApiActions.receiveError(error);
       }
     });
   }

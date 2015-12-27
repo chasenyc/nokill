@@ -1,9 +1,5 @@
 var UserForm = React.createClass({
 
-  formClick: function (e) {
-    e.stopPropagation();
-  },
-
   submit: function (e) {
     e.preventDefault();
     var formData = $(e.currentTarget).serializeJSON();
@@ -15,7 +11,6 @@ var UserForm = React.createClass({
     return(
       <div className="user-sign-up">
         <form
-          onClick={ this.formClick }
           className="sign-up-form"
           onSubmit={ this.submit }>
           <h1 className="user-form-header">Create An Account</h1>
