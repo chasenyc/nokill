@@ -1,6 +1,6 @@
 # Schema Information
 
-## Owners
+## Users
 column name     |  data type     |  details
 ----------------|----------------|-----------------------
 id              | integer        | not null, primary key
@@ -10,17 +10,8 @@ last name       | string         | not null
 phone_number    | string         |
 phone_verified  | boolean        | not null, default false
 email_verified  | boolean        | not null, default false
+is_shelter      | boolean        | not null, default false
 pin             | string         | not null
-password_digest | string         | not null
-session_token   | string         | not null, indexed, unique
-
-## Shelters
-column name     |  data type     |  details
-----------------|----------------|-----------------------
-id              | integer        | not null, primary key
-email           | string         | not null, indexed, unique
-email_verified  | boolean        | not null, default false
-admin_verified  | boolean        | not null, default false
 password_digest | string         | not null
 session_token   | string         | not null, indexed, unique
 
@@ -28,7 +19,7 @@ session_token   | string         | not null, indexed, unique
 column name     |  data type     |  details
 ----------------|----------------|-----------------------
 id              | integer        | not null, primary key
-owner_id        | integer        | foreign key (references owners)
+user_id         | integer        | foreign key (references users)
 name            | string         | not null
 gender          | string         | not null, limit 1
 birthday        | date           | not null
