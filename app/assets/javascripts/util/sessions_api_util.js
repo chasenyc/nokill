@@ -1,6 +1,6 @@
 var SessionsApiUtil = {
-  login: function (credentials, success) {
-    $.ajax({
+  login: function (credentials, success, errorCallback) {
+    return $.ajax({
       url: '/api/session',
       type: 'POST',
       dataType: 'json',
@@ -10,6 +10,7 @@ var SessionsApiUtil = {
         success && success();
       },
       error: function (error) {
+        errorCallback && errorCallback(error);
       }
     });
   },

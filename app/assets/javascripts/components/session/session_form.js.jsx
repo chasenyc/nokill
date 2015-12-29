@@ -1,8 +1,15 @@
 var SessionForm = React.createClass({
+
+  mixins: [ReactRouter.History],
+
+  getInitialState: function () {
+    return ({flash: ''});
+  },
+
   submit: function (e) {
     e.preventDefault();
     var credentials = $(e.currentTarget).serializeJSON();
-    SessionsApiUtil.login(credentials);
+    SessionsApiUtil.login(credentials, this._successfulLogin, this._failedLogin);
   },
 
   render: function () {
@@ -13,6 +20,7 @@ var SessionForm = React.createClass({
           className="sign-in-form"
           onSubmit={ this.submit }>
           <h1 className="user-form-header">Sign In</h1>
+          <p className="flash-notice">{this.state.flash}</p>
             <label>Email:</label>
             <input
               type="email"
@@ -28,5 +36,13 @@ var SessionForm = React.createClass({
         </form>
       </div>
     )
+  },
+
+  _successfulLogin: function () {
+    this.history.pushState(null, "/");
+  },
+
+  _failedLogin: function (error) {
+    this.setState({flash: error.responseText})
   }
 });

@@ -1,4 +1,11 @@
 var App = React.createClass({
+
+  mixins: [ReactRouter.History],
+
+  componentWillMount: function () {
+    this._ensureLoggedIn();
+  },
+
   render: function () {
 
     return (
@@ -17,5 +24,15 @@ var App = React.createClass({
       }.bind(this)
     );
     return renderedChildren;
+  },
+
+  _ensureLoggedIn: function () {
+    console.log(this.props.location.pathname);
+    if (this.props.location.pathname === "/signin" ||
+        this.props.location.pathname === "/signup" ||
+        CurrentUserStore.isLoggedIn()) {
+      return;
+    }
+    this.history.pushState(null, "/signin");
   }
 });
