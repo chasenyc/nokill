@@ -8,6 +8,7 @@ $(function(){
   var routes = (
       <Route path="/" component={App}>
         <Route path="signup" component={ UserForm }/>
+        <Route path="signin" component={ SessionForm }/>
       </Route>
   );
   React.render(<Router>{routes}</Router>, root);

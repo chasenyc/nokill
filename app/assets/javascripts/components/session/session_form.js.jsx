@@ -1,4 +1,9 @@
 var SessionForm = React.createClass({
+  submit: function (e) {
+    e.preventDefault();
+    var credentials = $(e.currentTarget).serializeJSON();
+    SessionsApiUtil.login(credentials);
+  },
 
   render: function () {
 
@@ -11,11 +16,11 @@ var SessionForm = React.createClass({
             <label>Email:</label>
             <input
               type="email"
-              name="user[email]"
+              name="email"
               placeholder="email"/>
             <label>Password:</label>
             <input type="password"
-              name="user[password]"
+              name="password"
               placeholder="password"/>
             <div className="btn-holder">
               <button className="btn large">Sign In</button>
