@@ -12,3 +12,35 @@ User.create(
   phone_number: '212-555-1212',
   password: 'password11'
 )
+
+Species.create([{name: 'Dog'},{name: 'Cat'}])
+
+Breed.create([
+  {species_id: 1, breed: 'Akita'},
+  {species_id: 1, breed: 'Husky'},
+  {species_id: 1, breed: 'Australian Cattle Dog'},
+  {species_id: 1, breed: 'Retriever, Labrador'},
+  {species_id: 1, breed: 'Chihuahua'},
+  {species_id: 1, breed: 'Shih Tzu'},
+  {species_id: 1, breed: 'Poodle'},
+  {species_id: 1, breed: 'Maltese'},
+  {species_id: 1, breed: 'Spaniel'},
+  {species_id: 1, breed: 'Terrier, American Staffordshire'},
+  {species_id: 1, breed: 'Terrier, Yorkshire'},
+  {species_id: 1, breed: 'Terrier, West Highland White'},
+  {species_id: 1, breed: 'Terrier, Russell'},
+  {species_id: 1, breed: 'Terrier, Rat'},
+  {species_id: 1, breed: 'Hound'},
+  {species_id: 1, breed: 'Whippet'},
+  {species_id: 1, breed: 'Border Collie'},
+  {species_id: 1, breed: 'Bulldog'},
+  {species_id: 1, breed: 'Terrier, Pit Bull'},
+  {species_id: 1, breed: 'Doberman Pinscher'},
+  {species_id: 1, breed: 'Greyhound'},
+  {species_id: 1, breed: 'Shepherd'},
+  {species_id: 1, breed: 'German Shepherd'},
+  {species_id: 1, breed: 'Pekingese'},
+  {species_id: 1, breed: 'Pomeranian'},
+  {species_id: 1, breed: 'Shiba Inu'},
+  {species_id: 1, breed: 'Schnauzer'},
+])
