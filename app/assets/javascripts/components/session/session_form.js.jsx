@@ -33,6 +33,8 @@ var SessionForm = React.createClass({
             <div className="btn-holder">
               <button className="btn large">Sign In</button>
             </div>
+            Or if you do not have an account&nbsp;
+            <a href="#/signup" className="display-link">sign up.</a>
         </form>
       </div>
     )

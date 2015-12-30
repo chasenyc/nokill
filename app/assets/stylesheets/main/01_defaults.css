@@ -23,6 +23,10 @@ button {
   margin: 5px;
 }
 
+a {
+  cursor: pointer;
+}
+
 button:hover {
   background: #3B8686;
   color: #FFF;
@@ -44,4 +48,12 @@ h3 {
 
 label {
   display: block;
+}
+
+.display-link {
+  color: #0B486B;
+}
+
+.display-link:hover {
+  text-decoration: underline;
 }
