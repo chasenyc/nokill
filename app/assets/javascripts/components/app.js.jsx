@@ -3,7 +3,11 @@ var App = React.createClass({
   mixins: [ReactRouter.History],
 
   componentWillMount: function () {
-    this._ensureLoggedIn();
+    SessionsApiUtil.fetchCurrentUser(this._ensureLoggedIn);
+  },
+
+  logOut: function () {
+    SessionsApiUtil.logout();
   },
 
   render: function () {
@@ -11,6 +15,7 @@ var App = React.createClass({
     return (
       <div className="nokill-app">
         {this._renderedChildren()}
+        <button onClick={this.logOut}>Log out</button>
       </div>
     );
   },
