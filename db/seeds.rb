@@ -45,6 +45,33 @@ Breed.create([
   {species_id: 1, breed: 'Schnauzer'},
 ])
 
+Reason.create([
+  {description: 'Aggression to animals'},
+  {description: 'Aggression to people'},
+  {description: 'Allergic to animal'},
+  {description: 'Cannot afford'},
+  {description: 'Death of Owner / Family'},
+  {description: 'Destructive'},
+  {description: 'Divorce / Separation'},
+  {description: 'Found - Cannot Keep'},
+  {description: 'Health of Owner'},
+  {description: 'Landlord Issues'},
+  {description: 'Military Transfer'},
+  {description: 'Moving'},
+  {description: 'Requires Too Much Attention'},
+  {description: 'New Baby'},
+  {description: 'Too Active'},
+  {description: 'Too Much Responsibility'},
+  {description: 'Too Old'},
+  {description: 'Too Young'},
+  {description: 'Litterbox Issues'},
+  {description: 'Sheds'},
+  {description: 'Personal Problems'},
+  {description: 'Does Not Protect'},
+  {description: 'No Home'},
+  {description: 'Temperament'},
+])
+
 Animal.create(
   owner_id: 1,
   name: 'Emma',

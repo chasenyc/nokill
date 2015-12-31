@@ -7,4 +7,9 @@ class Animal < ActiveRecord::Base
                     },
                     default_url: "animalavatar.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+  belongs_to :reason
+  belongs_to :breed
+  belongs_to :species
+  
 end

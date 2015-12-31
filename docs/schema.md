@@ -45,3 +45,9 @@ column name     |  data type     |  details
 ----------------|----------------|-----------------------
 id              | integer        | not null, primary key
 name            | string         | not null, unique
+
+## Reasons
+column name     |  data type     |  details
+----------------|----------------|-----------------------
+id              | integer        | not null, primary key
+description     | string         | not null, unique
