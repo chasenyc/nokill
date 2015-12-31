@@ -11,10 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151230180159) do
+ActiveRecord::Schema.define(version: 20151231020245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "animals", force: :cascade do |t|
+    t.integer  "owner_id",                     null: false
+    t.string   "name",                         null: false
+    t.string   "gender",             limit: 1, null: false
+    t.date     "birthdate",                    null: false
+    t.integer  "breed_id",                     null: false
+    t.integer  "species_id",                   null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "reason_id"
+    t.string   "origin"
+    t.string   "ownership_length"
+    t.boolean  "bitten",                       null: false
+    t.text     "bite_details"
+    t.text     "summary"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "animals", ["owner_id"], name: "index_animals_on_owner_id", using: :btree
 
   create_table "breeds", force: :cascade do |t|
     t.string   "breed",      null: false
@@ -44,4 +67,7 @@ ActiveRecord::Schema.define(version: 20151230180159) do
     t.boolean  "is_shelter",      default: false, null: false
   end
 
+  add_foreign_key "animals", "breeds"
+  add_foreign_key "animals", "species"
+  add_foreign_key "animals", "users", column: "owner_id"
 end
