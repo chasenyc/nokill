@@ -10,20 +10,9 @@ NoKill NYC is a web application that provides a centralized location for people 
 
 - [ ] Create an account
 - [ ] Log in / Log out
-- [ ] Create, edit, and delete animal profile
-- [ ] Organize notes within Notebooks
-- [ ] Tag notes with multiple tags and search notes by tag
-- [ ] Search through notes for blocks of text
-- [ ] Apply complex styling to notes while editing
-- [ ] Set reminders on notes
+- [ ] Create, edit, and delete animal profiles
+- [ ] Shelters can view all profiles
 
 ## Design Docs
-* [View Wireframes][view]
 * [DB schema][schema]
-
-[view]: ./docs/views.md
 [schema]: ./docs/schema.md
-
-## Implementation Timeline
-
-### Phase 1: User Authentication, Note Model and JSON API (1.5 days)

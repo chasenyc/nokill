@@ -26,7 +26,7 @@ birthday        | date           | not null
 species         | string         | not null
 breed_id        | integer        | foreign key (references breeds)
 image           | attachment     |
-reason          | string         |
+reason_id       | integer        | foreign key (references reasons)
 origin          | string         |
 ownership_length| string         |
 bitten          | boolean        | not null, default false
@@ -38,3 +38,10 @@ column name     |  data type     |  details
 ----------------|----------------|-----------------------
 id              | integer        | not null, primary key
 breed           | string         | not null, unique
+species_id      | integer        | foreign key (references species)
+
+## Species
+column name     |  data type     |  details
+----------------|----------------|-----------------------
+id              | integer        | not null, primary key
+name            | string         | not null, unique
