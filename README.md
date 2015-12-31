@@ -1,6 +1,6 @@
 # NoKill NYC
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
+[Heroku link][heroku] Not live yet...
 
 [heroku]: http://www.herokuapp.com
 
