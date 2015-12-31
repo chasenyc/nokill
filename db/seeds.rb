@@ -44,3 +44,16 @@ Breed.create([
   {species_id: 1, breed: 'Shiba Inu'},
   {species_id: 1, breed: 'Schnauzer'},
 ])
+
+Animal.create(
+  owner_id: 1,
+  name: 'Emma',
+  gender: 'm',
+  birthdate: DateTime.new(2008, 9, 23),
+  species_id: 1,
+  breed_id: 7,
+  image: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg',
+  reason_id: 1,
+  origin: 'born in home',
+  bitten: false
+)
