@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
 
   validates :email, :phone_number, uniqueness: true
 
-  after_initialize :ensure_session_token, :generate_pin
+  after_initialize :ensure_session_token, :generate_pin,
+                   :ensure_email_token
 
   def self.find_by_credentials(email, password)
     user = User.find_by_email(email)
@@ -41,5 +42,8 @@ class User < ActiveRecord::Base
     self.pin ||= rand(0000..9999).to_s.rjust(4, "0")
   end
 
+  def ensure_email_token
+    self.email_token ||= SecureRandom::urlsafe_base64
+  end
 
 end
