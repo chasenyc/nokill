@@ -3,16 +3,28 @@
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
-  <body>
-    <h1>Welcome to No Kill NYC, <%= @user.fname %></h1>
-    <p>
-      You have successfully signed up to nokill.nyc,
-      your login is: <%= @user.email %>.<br>
-    </p>
-    <p>
-      In order to add an animal to the database you need to confirm your e-mail address. Please click here.
-      <%= confirm_email_user_url(@user.email_token) %>
-    </p>
-    <p>Thanks for joining and have a great day!</p>
+  <body background="#f2f3ef">
+
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bgcolor="#f2f3ef" style="padding:30px;">
+      <h1 style="color: #3B8686;">Welcome to No Kill NYC, <%= @user.fname %></h1>
+      <p>
+        You have successfully signed up to nokill.nyc,
+        your login is: <%= @user.email %>.<br>
+      </p>
+      <p>
+        In order to add an animal to the database you need to confirm your e-mail address. Please click <a href="<%= confirm_email_user_url(@user.email_token) %>">here.</a>
+      </p>
+      <p>
+        If you do not see any links please paste the following code into your browser: <%= confirm_email_user_url(@user.email_token) %>
+      </p>
+      <p>Thanks,</p>
+
+    </td>
+  </tr>
+</table>
+
   </body>
 </html>
