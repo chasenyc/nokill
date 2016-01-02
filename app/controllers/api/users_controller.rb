@@ -5,6 +5,7 @@ class Api::UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
         session[:session_token] = @user.session_token
+        UserMailer.email_verification(@user).deliver_later
         render "show"
       else
         render json: @user.errors.full_messages.to_json, status: 401
