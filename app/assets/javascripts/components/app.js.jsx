@@ -54,6 +54,6 @@ var App = React.createClass({
   },
 
   _userChanged: function () {
-    this.setState({user: CurrentUserStore.currentUser()});
+    this.setState({currentUser: CurrentUserStore.currentUser()});
   }
 });
