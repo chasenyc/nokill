@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
   attr_reader :password
 
   validates :email, :password_digest, :session_token,
-            :fname, :lname, :pin, presence: true
+            :fname, :lname, :pin, :email_token, presence: true
 
-  validates :email, :phone_number, uniqueness: true
+  validates :email, :phone_number, :email_token, uniqueness: true
 
   after_initialize :ensure_session_token, :generate_pin,
                    :ensure_email_token
