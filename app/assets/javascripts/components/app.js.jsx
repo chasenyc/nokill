@@ -8,6 +8,10 @@ var App = React.createClass({
     });
   },
 
+  componentWillReceiveProps: function () {
+    SessionsApiUtil.fetchCurrentUser(this._ensureLoggedIn);
+  },
+
   componentWillMount: function () {
     SessionsApiUtil.fetchCurrentUser(this._ensureLoggedIn);
     CurrentUserStore.addChangeListener(this._userChanged);
@@ -45,6 +49,13 @@ var App = React.createClass({
   },
 
   _ensureLoggedIn: function () {
+    var result = CurrentUserStore.isLoggedIn();
+    if (CurrentUserStore.isLoggedIn() &&
+        (this.props.location.pathname === "/signin" ||
+        this.props.location.pathname === "/signup")) {
+          this.history.pushState(null, "/profile");
+        }
+
     if (this.props.location.pathname === "/signin" ||
         this.props.location.pathname === "/signup" ||
         CurrentUserStore.isLoggedIn()) {

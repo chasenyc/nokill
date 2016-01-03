@@ -3,7 +3,10 @@ var UserForm = React.createClass({
   submit: function (e) {
     e.preventDefault();
     var formData = $(e.currentTarget).serializeJSON();
-    UsersApiUtil.createUser(formData);
+    UsersApiUtil.createUser(formData, function () {
+      this.props.history.pushState(null, '/profile');
+    }.bind(this));
+
   },
 
   render: function () {
