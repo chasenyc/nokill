@@ -6,10 +6,10 @@ $(function(){
   var IndexRoute = ReactRouter.IndexRoute;
 
   var routes = (
-      <Route path="/" component={App}>
+      <Route path="/" component={ App }>
         <Route path="signup" component={ UserForm }/>
         <Route path="signin" component={ SessionForm }/>
-        <Route path="profile" component={ UserShow }/>
+        <Route path="account" component={ UserShow }/>
       </Route>
   );
   React.render(

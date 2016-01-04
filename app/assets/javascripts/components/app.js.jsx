@@ -25,18 +25,12 @@ var App = React.createClass({
     CurrentUserStore.removeChangeListener(this._userChanged);
   },
 
-  logOut: function () {
-    SessionsApiUtil.logout();
-    this.history.pushState(null, "/signin");
-  },
-
   render: function () {
 
     return (
       <div className="nokill-app">
         <Header {...this.props} {...this.state} />
         {this._renderedChildren()}
-        <button onClick={this.logOut}>Log out</button>
       </div>
     );
   },
@@ -57,7 +51,7 @@ var App = React.createClass({
     if (CurrentUserStore.isLoggedIn() &&
         (this.props.location.pathname === "/signin" ||
         this.props.location.pathname === "/signup")) {
-          this.history.pushState(null, "/profile");
+          this.history.pushState(null, "/account");
         }
 
     if (this.props.location.pathname === "/signin" ||

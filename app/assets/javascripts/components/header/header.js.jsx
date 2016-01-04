@@ -1,7 +1,7 @@
 var Header = React.createClass({
 
   onProfileClick: function () {
-    this.props.history.pushState(null, "/profile");
+    this.props.history.pushState(null, "/account");
   },
 
   onSignInClick: function () {

@@ -21,6 +21,7 @@ var UserShow = React.createClass({
     var currUser = this.props.currentUser;
     return (
       <div className="show-user">
+        <h1>Your Account</h1>
         <p>
           Name: {currUser.fname} {currUser.lname}
         </p>
