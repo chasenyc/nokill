@@ -42,6 +42,21 @@ var SessionsApiUtil = {
 
       }
     });
+  },
+
+  resendEmailVerification: function (success) {
+    $.ajax({
+      url: '/api/send_email_verification',
+      type: 'GET',
+      dataType: 'json',
+      success: function (currentUser) {
+        CurrentUserActions.receiveCurrentUser(currentUser);
+        success && success();
+      },
+      error: function (error) {
+
+      }
+    });
   }
 
 
