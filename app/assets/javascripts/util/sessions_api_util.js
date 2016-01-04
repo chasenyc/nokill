@@ -36,6 +36,7 @@ var SessionsApiUtil = {
       dataType: 'json',
       success: function (currentUser) {
         CurrentUserActions.receiveCurrentUser(currentUser);
+
         success && success();
       },
       error: function (error) {
@@ -49,8 +50,7 @@ var SessionsApiUtil = {
       url: '/api/send_email_verification',
       type: 'GET',
       dataType: 'json',
-      success: function (currentUser) {
-        CurrentUserActions.receiveCurrentUser(currentUser);
+      success: function (message) {
         success && success();
       },
       error: function (error) {

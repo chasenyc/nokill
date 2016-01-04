@@ -26,7 +26,7 @@ class Api::UsersController < ApplicationController
       @user = current_user
       if @user
         UserMailer.email_verification(@user).deliver_later
-        render json: 'success', status: 200
+        render json: {'response': 'success'}, status: 200
       else
         render json: @user.errors.full_messages.to_json, status: 401
       end

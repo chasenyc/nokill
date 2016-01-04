@@ -1,6 +1,12 @@
 var UserShow = React.createClass({
 
-  resendEmailVerification: function () {
+  getInitialState: function () {
+    return ({emailSent: false});
+  },
+
+  resendEmailVerification: function (e) {
+    e.preventDefault();
+    this.setState({emailSent: true});
     SessionsApiUtil.resendEmailVerification();
   },
 
@@ -13,7 +19,6 @@ var UserShow = React.createClass({
       )
     }
     var currUser = this.props.currentUser;
-
     return (
       <div className="show-user">
         <p>
@@ -33,6 +38,8 @@ var UserShow = React.createClass({
   },
 
   _verified: function () {
+    console.log(this.state.emailSent);
+    if (this.state.emailSent === true) { return 'e-mail sent'}
     var result;
     if (this.props.currentUser.email_verified) {
       result = 'Verified';
