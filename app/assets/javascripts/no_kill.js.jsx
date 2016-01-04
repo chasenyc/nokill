@@ -12,5 +12,8 @@ $(function(){
         <Route path="profile" component={ UserShow }/>
       </Route>
   );
-  React.render(<Router>{routes}</Router>, root);
+  React.render(
+    <Router>
+      {routes}
+    </Router>, root);
 });

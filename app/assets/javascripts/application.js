@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.serializeJSON
+//= require history.min
 //= require react
 //= require react_router
 //= require flux

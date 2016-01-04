@@ -1,3 +1,7 @@
+var history = History.createHashHistory({
+  queryKey: false
+});
+
 var App = React.createClass({
 
   mixins: [ReactRouter.History],

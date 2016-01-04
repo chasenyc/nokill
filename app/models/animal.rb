@@ -1,6 +1,6 @@
 class Animal < ActiveRecord::Base
 
-  validates :owner_id, :name, :gender, :birthdate, :breed_id
+  validates :owner_id, :name, :gender, :birthdate, :breed_id,
             :species_id, :reason_id, :bitten, presence: true
 
   has_attached_file :image,
