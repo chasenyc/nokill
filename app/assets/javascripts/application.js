@@ -13,11 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.serializeJSON
-//= require history.min
-//= require react
-//= require react_router
-//= require flux
-//= require eventemitter
-//= require_tree ./util
-//= require_tree ./components
-//= require_tree .
+//= require bundle
