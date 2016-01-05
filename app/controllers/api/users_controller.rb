@@ -41,6 +41,6 @@ class Api::UsersController < ApplicationController
 
     def ensure_current_user_is_authorized
       return if (params[:id].to_i == current_user.id)
-      render json: "Something went wrong, cannot edit another user's information.", status: :forbidden
+      render json: {'response': "Something went wrong, cannot edit another user's information."}, status: :forbidden
     end
 end
