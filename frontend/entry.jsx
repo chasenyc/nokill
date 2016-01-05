@@ -7,11 +7,12 @@ var IndexRedirect = require("react-router").IndexRedirect;
 var createHistory = require("history").createHistory;
 
 var App = require("./components/app");
+var SessionForm = require("./components/session/sessionform");
 
 var routes = (
   <Router history={ createHistory() }>
     <Route name="app" path="/" component={ App }>
-
+        <Route path="signin" component={ SessionForm }/>
     </Route>
   </Router>
 );

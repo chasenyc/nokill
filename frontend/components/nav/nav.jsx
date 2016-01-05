@@ -19,7 +19,7 @@ var Nav = React.createClass({
   },
 
   onLogOutClick: function () {
-    SessionsApiUtil.logout();
+    SessionApiUtil.logout();
   },
 
   render: function () {
