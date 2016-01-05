@@ -13,4 +13,6 @@ Rails.application.routes.draw do
       get :confirm_email
     end
   end
+
+  get "*path", to: "static_pages#root"
 end
