@@ -2,6 +2,8 @@ var React = require("react");
 var SessionApiUtil = require("../util/SessionApiUtil");
 var CurrentUserStore = require("../stores/CurrentUser");
 
+var Nav = require("./nav/nav");
+
 var App = React.createClass({
 
   getInitialState: function () {
@@ -28,9 +30,21 @@ var App = React.createClass({
 
     return (
       <div className="nokill-app">
-        {this.state.user.email}
+        <Nav {...this.props} {...this.state} />
+        {this._renderedChildren()}
       </div>
     );
+  },
+
+  _renderedChildren: function () {
+    var renderedChildren = React.Children.map(this.props.children,
+      function (child) {
+        return React.cloneElement(
+        child, Object.assign({}, this.state, this.props)
+        );
+      }.bind(this)
+    );
+    return renderedChildren;
   },
 
   _onCurrUserChange: function () {
