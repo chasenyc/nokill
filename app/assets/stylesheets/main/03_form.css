@@ -1,0 +1,15 @@
+
+
+
+
+
+.input-validation {
+  margin: 5px 0 10px 0;
+  font-size: 12px;
+  color: #a94442;
+  visibility: hidden;
+}
+
+.input-validation.visible {
+  visibility: visible;
+}

@@ -1,6 +1,6 @@
 var UsersApiUtil = {
 
-  createUser: function (formData, success) {
+  createUser: function (formData, success, failure) {
     $.ajax({
       url: 'api/users',
       type: 'POST',

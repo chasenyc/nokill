@@ -2,7 +2,7 @@ var CurrentUserActions = require("../actions/CurrentUserActions");
 
 var UsersApiUtil = {
 
-  createUser: function (formData, success) {
+  createUser: function (formData, success, failure) {
     $.ajax({
       url: 'api/users',
       type: 'POST',
@@ -13,7 +13,7 @@ var UsersApiUtil = {
         success && success();
       },
       error: function (error) {
-
+        failure && failure(error);
       }
     });
   },

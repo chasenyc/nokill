@@ -8,11 +8,13 @@ var createHistory = require("history").createHistory;
 
 var App = require("./components/app");
 var SessionForm = require("./components/session/sessionform");
+var UserForm = require("./components/user/userform");
 
 var routes = (
   <Router history={ createHistory() }>
     <Route name="app" path="/" component={ App }>
         <Route path="signin" component={ SessionForm }/>
+        <Route path="signup" component={ UserForm }/>
     </Route>
   </Router>
 );
