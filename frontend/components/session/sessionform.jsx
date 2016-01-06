@@ -1,6 +1,8 @@
 var React = require("react");
 var LinkedStateMixin = require("react-addons-linked-state-mixin");
 
+var SessionApiUtil = require("../../util/SessionApiUtil");
+
 var SessionForm = React.createClass({
 
   mixins: [LinkedStateMixin],
@@ -9,7 +11,8 @@ var SessionForm = React.createClass({
     return ({
       flash: '',
       email: '',
-      password: ''
+      password: '',
+      passwordValidation: ''
     });
   },
 
@@ -19,7 +22,7 @@ var SessionForm = React.createClass({
       email: this.state.email,
       password: this.state.password
     };
-    SessionsApiUtil.login(credentials, this._successfulLogin, this._failedLogin);
+    SessionApiUtil.login(credentials, this._successfulLogin, this._failedLogin);
   },
 
   render: function () {
@@ -42,6 +45,9 @@ var SessionForm = React.createClass({
               name="password"
               placeholder="password"
               valueLink={ this.linkState("password") } />
+            <p>
+              <span>{this._isPasswordValid()}</span>
+            </p>
             <div className="btn-holder">
               <button className="btn large">Sign In</button>
             </div>
@@ -58,6 +64,11 @@ var SessionForm = React.createClass({
 
   _failedLogin: function (error) {
     this.setState({flash: error.responseText})
+  },
+
+  _isPasswordValid: function () {
+    if (this.state.password.length > 7) { return; }
+    return 'password needs to be at least 8 characters.'
   }
 });
 
