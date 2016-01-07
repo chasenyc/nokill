@@ -26,7 +26,7 @@ class Api::UsersController < ApplicationController
       @user = current_user
       if @user
         UserMailer.email_verification(@user).deliver_later
-        render json: {'response': 'success'}, status: 200
+        render json: {'response' => 'success'}, status: 200
       else
         render json: @user.errors.full_messages.to_json, status: 401
       end
@@ -41,6 +41,6 @@ class Api::UsersController < ApplicationController
 
     def ensure_current_user_is_authorized
       return if (params[:id].to_i == current_user.id)
-      render json: {'response': "Something went wrong, cannot edit another user's information."}, status: :forbidden
+      render json: {'response' => "Something went wrong, cannot edit another user's information."}, status: :forbidden
     end
 end
