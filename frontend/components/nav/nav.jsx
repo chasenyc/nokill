@@ -6,7 +6,6 @@ var CurrentUserStore = require("../../stores/CurrentUser");
 var Nav = React.createClass({
 
   onAccountClick: function () {
-    debugger;
     this.props.history.pushState(null, "/account");
   },
 

@@ -59,7 +59,7 @@ var SessionForm = React.createClass({
   },
 
   _successfulLogin: function () {
-    this.props.history.pushState(null, "/profile");
+    this.props.history.pushState(null, "/account");
   },
 
   _failedLogin: function (error) {

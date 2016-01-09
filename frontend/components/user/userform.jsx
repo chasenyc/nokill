@@ -99,7 +99,7 @@ var UserForm = React.createClass({
   },
 
   _successfulSignUp: function () {
-    this.props.history.pushState(null, "/profile");
+    this.props.history.pushState(null, "/account");
   },
 
   _failedSignUp: function () {

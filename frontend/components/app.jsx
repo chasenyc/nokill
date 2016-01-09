@@ -19,7 +19,9 @@ var App = React.createClass({
 
   componentDidMount: function () {
     SessionApiUtil.fetchCurrentUser();
-    this.listenerToken = CurrentUserStore.addListener(this._onCurrUserChange);
+    this.listenerToken = CurrentUserStore.addListener(
+      this._onCurrUserChange
+    );
   },
 
   componentWillUnmount: function () {
